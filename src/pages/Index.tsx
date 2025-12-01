@@ -64,24 +64,8 @@ const Index = () => {
                   Accounting & Finance Enthusiast | Business Development Support | ACCA Student preparing for excellence
                 </p>
               </div>
-
-              {/* Stats Row */}
-              <div className="grid grid-cols-3 gap-6 py-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-white mb-1">5+</div>
-                  <div className="text-sm text-white/70">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-white mb-1">3</div>
-                  <div className="text-sm text-white/70">Certificates</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-white mb-1">3+</div>
-                  <div className="text-sm text-white/70">Achievements</div>
-                </div>
-              </div>
               
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex flex-wrap gap-4 pt-6">
                 <Button 
                   onClick={() => scrollToSection("contact")} 
                   size="lg" 
