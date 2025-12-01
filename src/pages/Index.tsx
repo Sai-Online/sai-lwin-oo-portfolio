@@ -164,7 +164,7 @@ const Index = () => {
           <Card className="shadow-lg border-0" style={{ boxShadow: "var(--card-shadow)" }}>
             <CardContent className="p-8">
               <p className="text-lg leading-relaxed text-muted-foreground">
-                Sai Lwin Oo is a final-year International Business student with strong interests in accounting, finance, and business development. He is an ACCA student preparing for the F3 Financial Accounting exam and experienced in operations, business support, data handling, and research. With a proven track record in competitive business environments and academic excellence, Sai brings strong organizational, analytical, and communication skills to every project he undertakes.
+                I am a final-year International Business student with strong interests in accounting, finance, and business development. I am currently an ACCA student preparing for the F3 Financial Accounting exam, and I have hands-on experience in operations, business support, data handling, and research. With a proven track record in competitive business environments and academic excellence, I bring strong organizational, analytical, and communication skills to every project I undertake.
               </p>
             </CardContent>
           </Card>
