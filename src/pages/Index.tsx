@@ -31,36 +31,141 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-24 pb-20 px-6 bg-gradient-to-br from-primary via-primary to-accent min-h-screen flex items-center">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-white space-y-6 animate-fade-in">
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                Hey There,<br />I'm Sai Lwin Oo
+      <section id="home" className="relative pt-24 pb-20 px-6 bg-gradient-to-br from-primary via-primary to-accent min-h-screen flex items-center overflow-hidden">
+        {/* Floating Decorative Elements */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-white rounded-full animate-ping"></div>
+        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-white/60 rounded-full animate-ping" style={{ animationDelay: "0.5s" }}></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-white space-y-8 animate-fade-in">
+              <div className="inline-block">
+                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
+                  👋 Welcome to my portfolio
+                </span>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                Hey There,
+                <br />
+                <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                  I'm Sai Lwin Oo
+                </span>
               </h1>
-              <p className="text-xl text-white/90 leading-relaxed">
-                International Business Student | Accounting & Finance Enthusiast | Business Development Support
-              </p>
-              <p className="text-lg text-white/80">
-                Final-year student passionate about accounting, finance, and business development, seeking opportunities to apply my skills in professional internships.
-              </p>
+              
+              <div className="space-y-4">
+                <p className="text-2xl text-white/95 font-medium leading-relaxed">
+                  International Business Student
+                </p>
+                <p className="text-lg text-white/80 leading-relaxed max-w-xl">
+                  Accounting & Finance Enthusiast | Business Development Support | ACCA Student preparing for excellence
+                </p>
+              </div>
+
+              {/* Stats Row */}
+              <div className="grid grid-cols-3 gap-6 py-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-white mb-1">5+</div>
+                  <div className="text-sm text-white/70">Years Experience</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-white mb-1">3</div>
+                  <div className="text-sm text-white/70">Certificates</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-white mb-1">3+</div>
+                  <div className="text-sm text-white/70">Achievements</div>
+                </div>
+              </div>
+              
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button onClick={() => scrollToSection("contact")} size="lg" variant="secondary" className="font-semibold">
+                <Button 
+                  onClick={() => scrollToSection("contact")} 
+                  size="lg" 
+                  variant="secondary" 
+                  className="font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
                   Contact Me
                 </Button>
-                <Button onClick={() => scrollToSection("about")} size="lg" variant="outline" className="bg-white/10 text-white border-white hover:bg-white hover:text-primary font-semibold">
+                <Button 
+                  onClick={() => scrollToSection("about")} 
+                  size="lg" 
+                  variant="outline" 
+                  className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
                   View Portfolio
                 </Button>
               </div>
             </div>
-            <div className="flex justify-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
+
+            {/* Right Content - Modern Profile Card */}
+            <div className="flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <div className="relative">
-                <div className="absolute inset-0 bg-white/20 rounded-full blur-3xl"></div>
-                <img 
-                  src={profileImage} 
-                  alt="Sai Lwin Oo - Professional Profile" 
-                  className="relative w-80 h-80 md:w-96 md:h-96 rounded-full object-cover border-8 border-white shadow-2xl"
-                />
+                {/* Decorative rings */}
+                <div className="absolute -inset-8 border-2 border-white/10 rounded-3xl rotate-6"></div>
+                <div className="absolute -inset-4 border-2 border-white/20 rounded-3xl -rotate-3"></div>
+                
+                {/* Main Card */}
+                <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl">
+                  <div className="space-y-6">
+                    {/* Profile Image */}
+                    <div className="relative mx-auto w-64 h-64">
+                      <div className="absolute inset-0 bg-gradient-to-br from-accent to-primary rounded-2xl blur-xl opacity-50"></div>
+                      <img 
+                        src={profileImage} 
+                        alt="Sai Lwin Oo - Professional Profile" 
+                        className="relative w-full h-full rounded-2xl object-cover border-4 border-white/30 shadow-xl"
+                      />
+                      {/* Status Badge */}
+                      <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 bg-white rounded-full shadow-lg flex items-center gap-2">
+                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-sm font-semibold text-primary">Available for Internships</span>
+                      </div>
+                    </div>
+
+                    {/* Info Cards */}
+                    <div className="space-y-3 pt-6">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                            <Mail className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="text-left">
+                            <div className="text-xs text-white/70">Email</div>
+                            <div className="text-sm font-medium text-white">saii.lwinnoo@gmail.com</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                            <MapPin className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="text-left">
+                            <div className="text-xs text-white/70">Location</div>
+                            <div className="text-sm font-medium text-white">Pathum Thani, Thailand</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                            <GraduationCap className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="text-left">
+                            <div className="text-xs text-white/70">Education</div>
+                            <div className="text-sm font-medium text-white">Rangsit University</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
