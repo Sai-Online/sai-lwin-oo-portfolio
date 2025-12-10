@@ -7,8 +7,8 @@ import profileImage from "@/assets/profile.jpg";
 import certAccounting from "@/assets/cert-accounting.jpg";
 import certExcel from "@/assets/cert-excel.jpg";
 import certCapitalMarkets from "@/assets/cert-capital-markets.jpg";
-import achievement1stPlace from "@/assets/achievement-1st-place.pdf";
-import achievementLoreal from "@/assets/achievement-loreal.pdf";
+import achievement1stPlace from "@/assets/achievement-1st-place.png";
+import achievementLoreal from "@/assets/achievement-loreal.png";
 import achievementConference from "@/assets/achievement-conference.png";
 
 const Index = () => {
@@ -501,10 +501,10 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl hover:scale-105 overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
               <div className="aspect-[4/3] overflow-hidden bg-muted">
-                <iframe 
+                <img 
                   src={achievement1stPlace} 
-                  className="w-full h-full"
-                  title="1st Runner-Up Business Pitch Competition Certificate"
+                  alt="1st Runner-Up Business Pitch Competition Certificate"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <CardHeader className="p-4">
@@ -521,10 +521,10 @@ const Index = () => {
 
             <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl hover:scale-105 overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
               <div className="aspect-[4/3] overflow-hidden bg-muted">
-                <iframe 
+                <img 
                   src={achievementLoreal} 
-                  className="w-full h-full"
-                  title="L'Oréal Brandstorm Semi-finalist Certificate"
+                  alt="L'Oréal Brandstorm Semi-finalist Certificate"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <CardHeader className="p-4">
