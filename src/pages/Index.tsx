@@ -4,6 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Award, Briefcase, GraduationCap, Code, TrendingUp, Users, FileText, BarChart, Search } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
+import certAccounting from "@/assets/cert-accounting.jpg";
+import certExcel from "@/assets/cert-excel.jpg";
+import certCapitalMarkets from "@/assets/cert-capital-markets.jpg";
 
 const Index = () => {
   const scrollToSection = (id: string) => {
@@ -96,12 +99,12 @@ const Index = () => {
                 <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-2xl">
                   <div className="space-y-6">
                     {/* Profile Image */}
-                    <div className="relative mx-auto w-64 h-64">
+                    <div className="relative mx-auto w-80 h-80">
                       <div className="absolute inset-0 bg-gradient-to-br from-accent to-primary rounded-2xl blur-xl opacity-50"></div>
                       <img 
                         src={profileImage} 
                         alt="Sai Lwin Oo - Professional Profile" 
-                        className="relative w-full h-full rounded-2xl object-cover border-4 border-white/30 shadow-xl"
+                        className="relative w-full h-full rounded-2xl object-cover object-top border-4 border-white/30 shadow-xl"
                       />
                       {/* Status Badge */}
                       <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 bg-white rounded-full shadow-lg flex items-center gap-2">
@@ -163,9 +166,17 @@ const Index = () => {
           <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
           <Card className="shadow-lg border-0" style={{ boxShadow: "var(--card-shadow)" }}>
             <CardContent className="p-8">
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                I am a final-year International Business student with strong interests in accounting, finance, and business development. I am currently an ACCA student preparing for the F3 Financial Accounting exam, and I have hands-on experience in operations, business support, data handling, and research. With a proven track record in competitive business environments and academic excellence, I bring strong organizational, analytical, and communication skills to every project I undertake.
-              </p>
+              <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
+                <p>
+                  I am a detail-oriented and motivated final-year International Business student with strong skills in business operations, data organization, and problem-solving. Throughout my academic journey and hands-on experiences, I have supported daily tasks, organized business information, and worked with tools such as Microsoft Excel to improve workflow efficiency. I am particularly interested in accounting and finance, and I enjoy working with numbers, data, and structured processes that support informed decision-making.
+                </p>
+                <p>
+                  In addition, I am passionate about project coordination—ensuring tasks are organized, timelines are followed, and teams work together effectively to achieve shared goals.
+                </p>
+                <p>
+                  I enjoy learning, adapting to new challenges, and contributing to team success. My goal is to apply my knowledge and practical skills in a professional environment where I can grow, support organizational projects, and create meaningful impact across various business functions, especially in finance, accounting, and operational support.
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -335,10 +346,6 @@ const Index = () => {
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
                     <span className="text-sm">Business Analysis</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm">Content Creation</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -546,46 +553,46 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-center mb-4 text-foreground">Certificates</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl" style={{ boxShadow: "var(--card-shadow)" }}>
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Award className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-lg">Understanding Capital Markets</CardTitle>
-                    <CardDescription className="text-sm mt-1">Strategy First</CardDescription>
-                  </div>
-                </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src={certCapitalMarkets} 
+                  alt="Certificate in Understanding Capital Markets" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader className="pt-4">
+                <CardTitle className="text-lg">Understanding Capital Markets</CardTitle>
+                <CardDescription className="text-sm mt-1">Strategy First • 2021</CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl" style={{ boxShadow: "var(--card-shadow)" }}>
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Award className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-lg">Accounting 1</CardTitle>
-                    <CardDescription className="text-sm mt-1">University of Lausanne</CardDescription>
-                  </div>
-                </div>
+            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src={certAccounting} 
+                  alt="Accounting 1 Certificate - University of Lausanne" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader className="pt-4">
+                <CardTitle className="text-lg">Accounting 1</CardTitle>
+                <CardDescription className="text-sm mt-1">University of Lausanne • 2025</CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl" style={{ boxShadow: "var(--card-shadow)" }}>
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Award className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-lg">Work Smarter with Microsoft Excel</CardTitle>
-                    <CardDescription className="text-sm mt-1">Microsoft</CardDescription>
-                  </div>
-                </div>
+            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src={certExcel} 
+                  alt="Work Smarter with Microsoft Excel Certificate" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader className="pt-4">
+                <CardTitle className="text-lg">Work Smarter with Microsoft Excel</CardTitle>
+                <CardDescription className="text-sm mt-1">Microsoft • 2025</CardDescription>
               </CardHeader>
             </Card>
           </div>
