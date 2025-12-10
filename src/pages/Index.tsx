@@ -7,6 +7,9 @@ import profileImage from "@/assets/profile.jpg";
 import certAccounting from "@/assets/cert-accounting.jpg";
 import certExcel from "@/assets/cert-excel.jpg";
 import certCapitalMarkets from "@/assets/cert-capital-markets.jpg";
+import achievement1stPlace from "@/assets/achievement-1st-place.pdf";
+import achievementLoreal from "@/assets/achievement-loreal.pdf";
+import achievementConference from "@/assets/achievement-conference.png";
 
 const Index = () => {
   const scrollToSection = (id: string) => {
@@ -491,56 +494,68 @@ const Index = () => {
 
       {/* Projects & Achievements */}
       <section id="projects" className="py-20 px-6 bg-muted">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold text-center mb-4 text-foreground">Projects & Achievements</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
           
-          <div className="space-y-6">
-            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl" style={{ boxShadow: "var(--card-shadow)" }}>
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-accent/10 rounded-lg">
-                    <Award className="w-6 h-6 text-accent" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-xl">Semi-finalist – L'Oréal Brandstorm 2024</CardTitle>
-                    <CardDescription className="text-base mt-2">
-                      Competed at the semi-final level in L'Oréal's premier international business competition, developing innovative marketing strategies for global beauty brands.
-                    </CardDescription>
-                  </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl hover:scale-105 overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
+              <div className="aspect-[4/3] overflow-hidden bg-muted">
+                <iframe 
+                  src={achievement1stPlace} 
+                  className="w-full h-full"
+                  title="1st Runner-Up Business Pitch Competition Certificate"
+                />
+              </div>
+              <CardHeader className="p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <Award className="w-5 h-5 text-accent" />
+                  <span className="text-xs font-medium text-accent uppercase tracking-wide">Achievement</span>
                 </div>
+                <CardTitle className="text-lg">1st Runner-Up – Business Pitch Competition</CardTitle>
+                <CardDescription className="text-sm mt-1">
+                  RSU International College Business Pitch Competition in Thailand
+                </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl" style={{ boxShadow: "var(--card-shadow)" }}>
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-accent/10 rounded-lg">
-                    <Award className="w-6 h-6 text-accent" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-xl">1st Runner-Up – Business Pitch Competition EP.1</CardTitle>
-                    <CardDescription className="text-base mt-2">
-                      Secured second place in the RSU International College Business Pitch Competition in Thailand, presenting a comprehensive business proposal.
-                    </CardDescription>
-                  </div>
+            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl hover:scale-105 overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
+              <div className="aspect-[4/3] overflow-hidden bg-muted">
+                <iframe 
+                  src={achievementLoreal} 
+                  className="w-full h-full"
+                  title="L'Oréal Brandstorm Semi-finalist Certificate"
+                />
+              </div>
+              <CardHeader className="p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <Award className="w-5 h-5 text-accent" />
+                  <span className="text-xs font-medium text-accent uppercase tracking-wide">Achievement</span>
                 </div>
+                <CardTitle className="text-lg">Semi-finalist – L'Oréal Brandstorm 2024</CardTitle>
+                <CardDescription className="text-sm mt-1">
+                  International business competition for innovative marketing strategies
+                </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl" style={{ boxShadow: "var(--card-shadow)" }}>
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <FileText className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-xl">Research Paper – ICTHM 2025</CardTitle>
-                    <CardDescription className="text-base mt-2">
-                      "MICE as a Magnet: The Impact of MICE Events on Long-Term FDI Commitments and Economic Growth in Developing Countries."
-                    </CardDescription>
-                  </div>
+            <Card className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl hover:scale-105 overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
+              <div className="aspect-[4/3] overflow-hidden bg-muted">
+                <img 
+                  src={achievementConference} 
+                  alt="ICTHM 2025 Research Paper Presentation"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardHeader className="p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <FileText className="w-5 h-5 text-primary" />
+                  <span className="text-xs font-medium text-primary uppercase tracking-wide">Research</span>
                 </div>
+                <CardTitle className="text-lg">Research Paper – ICTHM 2025</CardTitle>
+                <CardDescription className="text-sm mt-1">
+                  MICE as a Magnet for FDI, Economic, and Overall Growth
+                </CardDescription>
               </CardHeader>
             </Card>
           </div>
