@@ -616,81 +616,38 @@ const Index = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-gradient-to-br from-primary via-primary to-accent text-white">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-center mb-4">Get In Touch</h2>
-          <div className="w-20 h-1 bg-white mx-auto mb-12"></div>
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
+          <div className="w-20 h-1 bg-white mx-auto mb-6"></div>
+          <p className="text-white/90 mb-12 text-lg">Feel free to reach out for opportunities or just to say hello!</p>
           
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-              
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-white/10 rounded-lg">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="font-medium">Email</p>
-                  <a href="mailto:saii.lwinnoo@gmail.com" className="text-white/90 hover:text-white transition-colors">
-                    saii.lwinnoo@gmail.com
-                  </a>
-                </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
+              <div className="p-4 bg-white/10 rounded-full w-fit mx-auto mb-4">
+                <Mail className="w-6 h-6" />
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-white/10 rounded-lg">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="font-medium">Phone</p>
-                  <a href="tel:0620460772" className="text-white/90 hover:text-white transition-colors">
-                    0620460772
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-white/10 rounded-lg">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="font-medium">Location</p>
-                  <p className="text-white/90">Pathum Thani, Thailand</p>
-                </div>
-              </div>
+              <p className="font-semibold mb-2">Email</p>
+              <a href="mailto:saii.lwinnoo@gmail.com" className="text-white/90 hover:text-white transition-colors text-sm">
+                saii.lwinnoo@gmail.com
+              </a>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-              <form className="space-y-4">
-                <div>
-                  <Input 
-                    placeholder="Your Name" 
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  />
-                </div>
-                <div>
-                  <Input 
-                    type="email" 
-                    placeholder="Your Email" 
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  />
-                </div>
-                <div>
-                  <Textarea 
-                    placeholder="Your Message" 
-                    rows={5}
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  />
-                </div>
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  variant="secondary"
-                  className="w-full font-semibold"
-                >
-                  Send Message
-                </Button>
-              </form>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
+              <div className="p-4 bg-white/10 rounded-full w-fit mx-auto mb-4">
+                <Phone className="w-6 h-6" />
+              </div>
+              <p className="font-semibold mb-2">Phone</p>
+              <a href="tel:0620460772" className="text-white/90 hover:text-white transition-colors text-sm">
+                0620460772
+              </a>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
+              <div className="p-4 bg-white/10 rounded-full w-fit mx-auto mb-4">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <p className="font-semibold mb-2">Location</p>
+              <p className="text-white/90 text-sm">Pathum Thani, Thailand</p>
             </div>
           </div>
         </div>
