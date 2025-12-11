@@ -1,8 +1,11 @@
+import { useState, FormEvent } from "react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Award, Briefcase, GraduationCap, Code, TrendingUp, Users, FileText, BarChart, Search } from "lucide-react";
+import { Mail, Phone, MapPin, Award, Briefcase, GraduationCap, Code, TrendingUp, Users, FileText, BarChart, Search, Send, Loader2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import profileImage from "@/assets/profile.jpg";
 import certAccounting from "@/assets/cert-accounting.jpg";
 import certExcel from "@/assets/cert-excel.jpg";
@@ -12,9 +15,50 @@ import achievementLoreal from "@/assets/achievement-loreal.png";
 import achievementConference from "@/assets/achievement-conference.png";
 
 const Index = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        "service_rvt7lu6",
+        "template_q2hklfx",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "NG0GL4DAKXcBj-sKf"
+      );
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -616,38 +660,107 @@ const Index = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-gradient-to-br from-primary via-primary to-accent text-white">
-        <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-4xl font-bold text-center mb-4">Get In Touch</h2>
           <div className="w-20 h-1 bg-white mx-auto mb-6"></div>
-          <p className="text-white/90 mb-12 text-lg">Feel free to reach out for opportunities or just to say hello!</p>
+          <p className="text-white/90 mb-12 text-lg text-center">Feel free to reach out for opportunities or just to say hello!</p>
           
-          <div className="grid sm:grid-cols-3 gap-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
-              <div className="p-4 bg-white/10 rounded-full w-fit mx-auto mb-4">
-                <Mail className="w-6 h-6" />
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="p-4 bg-white/10 rounded-full">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-semibold mb-1">Email</p>
+                    <a href="mailto:saii.lwinnoo@gmail.com" className="text-white/90 hover:text-white transition-colors">
+                      saii.lwinnoo@gmail.com
+                    </a>
+                  </div>
+                </div>
               </div>
-              <p className="font-semibold mb-2">Email</p>
-              <a href="mailto:saii.lwinnoo@gmail.com" className="text-white/90 hover:text-white transition-colors text-sm">
-                saii.lwinnoo@gmail.com
-              </a>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="p-4 bg-white/10 rounded-full">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-semibold mb-1">Phone</p>
+                    <a href="tel:0620460772" className="text-white/90 hover:text-white transition-colors">
+                      0620460772
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="p-4 bg-white/10 rounded-full">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-semibold mb-1">Location</p>
+                    <p className="text-white/90">Pathum Thani, Thailand</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
-              <div className="p-4 bg-white/10 rounded-full w-fit mx-auto mb-4">
-                <Phone className="w-6 h-6" />
-              </div>
-              <p className="font-semibold mb-2">Phone</p>
-              <a href="tel:0620460772" className="text-white/90 hover:text-white transition-colors text-sm">
-                0620460772
-              </a>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
-              <div className="p-4 bg-white/10 rounded-full w-fit mx-auto mb-4">
-                <MapPin className="w-6 h-6" />
-              </div>
-              <p className="font-semibold mb-2">Location</p>
-              <p className="text-white/90 text-sm">Pathum Thani, Thailand</p>
+            {/* Contact Form */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+              <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <Input
+                    type="text"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
+                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-white"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    required
+                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-white"
+                  />
+                </div>
+                <div>
+                  <Textarea
+                    placeholder="Your Message"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    required
+                    rows={5}
+                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-white resize-none"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-white text-primary hover:bg-white/90 font-semibold"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 mr-2" />
+                      Send Message
+                    </>
+                  )}
+                </Button>
+              </form>
             </div>
           </div>
         </div>
